@@ -49,7 +49,7 @@ int main()
     cin>>f;
     while(f--)
     {
-        memset(dis,0,sizeof(dis));
+        memset(dis,INT_MAX,sizeof(dis));
         cin>>n>>m>>w;
         all = 0;
         for(int i=0;i<m;i++)
