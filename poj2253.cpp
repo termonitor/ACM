@@ -45,3 +45,68 @@ int main()
     //system("Pause");
     return 0;
 }
+
+
+/*
+input
+2
+0 0
+3 4
+
+3
+17 4
+19 4
+18 5
+8
+1 1
+4 0
+1 2
+2 2
+3 2
+4 2
+3 0
+5 1
+3
+9 10
+10 10
+100 10
+6
+5 5
+100 100
+4 4
+3 3
+2 2
+1 1
+5
+1 2
+2 1
+3 2
+4 1
+5 2
+3
+999 999
+1 1
+3 3
+0
+output
+Scenario #1
+Frog Distance = 5.000
+
+Scenario #2
+Frog Distance = 1.414
+
+Scenario #3
+Frog Distance = 1.414
+
+Scenario #4
+Frog Distance = 1.000
+
+Scenario #5
+Frog Distance = 134.350
+
+Scenario #6
+Frog Distance = 1.414
+
+Scenario #7
+Frog Distance = 1408.557
+*/
