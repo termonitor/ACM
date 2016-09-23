@@ -31,7 +31,7 @@ double area(Point p1, Point p2, Point p3)
 
 int main()
 {
-	freopen("test.in", "r", stdin);
+	// freopen("test.in", "r", stdin);
 	int t, n, i;
 	Point p1, p2, p3;
 	double gx, gy, sumarea, temp;
