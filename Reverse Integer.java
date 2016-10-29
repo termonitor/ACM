@@ -24,6 +24,8 @@ public class Solution {
     
     public String reverseAction(int l, int r, String str) {
         String num = "";
+        if(str!=null && str.equals("0"))
+            return str;
         boolean flag = false;
         for(int i=r; i>=l; i--)
         {
