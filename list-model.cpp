@@ -1,6 +1,6 @@
 /*
-    @��Ŀ
-    �ö�̬ʵ�����Ա���Ҫ��������Ա��Ļ������������롢ɾ�����ⳤ�ȡ� 
+    @题目
+    用多态实现线性表，要求具有线性表的基本操作：插入、删除、测长等。 
 */
 #include<iostream>
 using namespace std;

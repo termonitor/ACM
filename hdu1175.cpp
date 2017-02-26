@@ -5,8 +5,8 @@
 using namespace std;
 
 /*
-    g++ 10000MS TLE³¬Ê±
-    c++ 9126MS ACÍ¨¹ý 
+    g++ 10000MS TLEè¶…æ—¶
+    c++ 9126MS ACé€šè¿‡ 
 */
 
 int map[2050][2050];

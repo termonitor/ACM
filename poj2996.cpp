@@ -124,7 +124,7 @@ int main()
             string temp = "";
             if(str[j]>='a' && str[j] <= 'z')
             {
-                //ºÚ×Ó
+                //é»‘å­
                // 2 6 10 14
                //(j-2)/4+1
                 if(str[j]=='p')

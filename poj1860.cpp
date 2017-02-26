@@ -1,26 +1,26 @@
 #include<iostream>
 using namespace std;
 
-int n;//»õ±ÒÖÖÊı 
-int m;//¶Ò»»µãÊıÁ¿ 
-int s;//³ÖÓĞµÚsÖÖ»õ±Ò 
-double v;//³ÖÓĞµÄs»õ±ÒµÄ±¾½ğ
+int n;//è´§å¸ç§æ•° 
+int m;//å…‘æ¢ç‚¹æ•°é‡ 
+int s;//æŒæœ‰ç¬¬sç§è´§å¸ 
+double v;//æŒæœ‰çš„sè´§å¸çš„æœ¬é‡‘
 
-int all;//×Ü±ßÊı
-double dis[101];//sµ½¸÷µãµÄÈ¨Öµ
+int all;//æ€»è¾¹æ•°
+double dis[101];//såˆ°å„ç‚¹çš„æƒå€¼
 
 struct exchange_points
 {
-    int a;//»õ±Òa 
-    int b;//»õ±Òb 
+    int a;//è´§å¸a 
+    int b;//è´§å¸b 
     double r;//rate 
-    double c;//ÊÖĞø·Ñ 
+    double c;//æ‰‹ç»­è´¹ 
 }exc[202];
 
 bool bellman()
 {
-    memset(dis,0,sizeof(dis)); //ÕâÀïÓëbellmanµÄÄ¿µÄ¸ÕºÃÏà·´¡£³õÊ¼»¯ÎªÔ´µãµ½¸÷µã¾àÀëÎŞÇîĞ¡
-    dis[s] = v;   //¼´bellman±¾ÓÃÓÚÕÒ¸º»·£¬Çó×îĞ¡Â·¾¶£¬±¾ÌâÊÇÀûÓÃÍ¬ÑùµÄË¼ÏëÕÒÕı»·£¬Çó×î´óÂ·¾¶  
+    memset(dis,0,sizeof(dis)); //è¿™é‡Œä¸bellmançš„ç›®çš„åˆšå¥½ç›¸åã€‚åˆå§‹åŒ–ä¸ºæºç‚¹åˆ°å„ç‚¹è·ç¦»æ— ç©·å°
+    dis[s] = v;   //å³bellmanæœ¬ç”¨äºæ‰¾è´Ÿç¯ï¼Œæ±‚æœ€å°è·¯å¾„ï¼Œæœ¬é¢˜æ˜¯åˆ©ç”¨åŒæ ·çš„æ€æƒ³æ‰¾æ­£ç¯ï¼Œæ±‚æœ€å¤§è·¯å¾„  
     
     bool flag;
     for(int i=1;i<=n-1;i++)

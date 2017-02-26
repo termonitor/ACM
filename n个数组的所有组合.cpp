@@ -14,7 +14,7 @@ void createvec(vector<vector<int> > &q,string str)
      {
              if(str[i]==' '){
                    vec.push_back(num);
-                   //cout<<num<<"加入"<<endl;
+                   //cout<<num<<"鍔犲叆"<<endl;
                    num=0;
                    continue;       
              }
@@ -24,7 +24,7 @@ void createvec(vector<vector<int> > &q,string str)
      if(num != 0)
      {
             vec.push_back(num);
-            //cout<<num<<"加入"<<endl;
+            //cout<<num<<"鍔犲叆"<<endl;
             num=0;
      }
      sort(vec.begin(),vec.end());

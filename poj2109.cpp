@@ -9,7 +9,7 @@ using namespace std;
 #define Equal 0
 #define Less -1
 
-//´óÕûÊı³Ë·¨ 
+//å¤§æ•´æ•°ä¹˜æ³• 
 char* IntegerMultiplication(const char *a,const char *b,char *product)
 {
     int i,j,k=Last,first,value,temp[Length];
@@ -28,17 +28,17 @@ char* IntegerMultiplication(const char *a,const char *b,char *product)
         product[i] = temp[i]%10+'0';
         temp[i-1] += temp[i]/10; 
     } 
-    //Ê¹firstÏÂ±êÎªÊ×¸ö²»Îª0µÄÊı×Ö 
+    //ä½¿firstä¸‹æ ‡ä¸ºé¦–ä¸ªä¸ä¸º0çš„æ•°å­— 
     while(product[first]=='0'&&first<Last)
     {
         first++;
     } 
     return &product[first]; 
 }
-//±È½ÏÁ½¸ö×Ö·û´®Êı×ÖµÄ´óĞ¡ 
+//æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²æ•°å­—çš„å¤§å° 
 int Compare(char *numA,char *numB)
 {
-    //È¥³ı0Ç°µ¼ 
+    //å»é™¤0å‰å¯¼ 
     for(;*numA=='0';numA++);
     for(;*numB=='0';numB++);
     int lenA = strlen(numA);
@@ -53,7 +53,7 @@ int Compare(char *numA,char *numB)
     }
     return Less;
 }
-//Çóbase^exp,½á¹û´æ·ÅÔÚresÖĞ£¬pResÖ¸Ïò½á¹ûµÄÊ×Î»Êı×ÖµÄÎ»ÖÃ 
+//æ±‚base^exp,ç»“æœå­˜æ”¾åœ¨resä¸­ï¼ŒpResæŒ‡å‘ç»“æœçš„é¦–ä½æ•°å­—çš„ä½ç½® 
 char* Power(char *base,int exp,char *res)
 {
     res[Last]='1';

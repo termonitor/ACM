@@ -4,9 +4,9 @@ using namespace std;
   
 #define MAX 0x3f3f3f3f  
 #define N 1010  
-int nodenum, edgenum, original; //µã£¬±ß£¬Æğµã  
+int nodenum, edgenum, original; //ç‚¹ï¼Œè¾¹ï¼Œèµ·ç‚¹  
   
-typedef struct Edge //±ß  
+typedef struct Edge //è¾¹  
 {  
     int u, v;  
     int cost;  
@@ -17,16 +17,16 @@ int dis[N], pre[N];
   
 bool Bellman_Ford()  
 {  
-    for(int i = 1; i <= nodenum; ++i) //³õÊ¼»¯  
+    for(int i = 1; i <= nodenum; ++i) //åˆå§‹åŒ–  
         dis[i] = (i == original ? 0 : MAX);  
     for(int i = 1; i <= nodenum - 1; ++i)  
         for(int j = 1; j <= edgenum; ++j)  
-            if(dis[edge[j].v] > dis[edge[j].u] + edge[j].cost) //ËÉ³Ú£¨Ë³ĞòÒ»¶¨²»ÄÜ·´~£©  
+            if(dis[edge[j].v] > dis[edge[j].u] + edge[j].cost) //æ¾å¼›ï¼ˆé¡ºåºä¸€å®šä¸èƒ½å~ï¼‰  
             {  
                 dis[edge[j].v] = dis[edge[j].u] + edge[j].cost;  
                 pre[edge[j].v] = edge[j].u;  
             }  
-    bool flag = 1; //ÅĞ¶ÏÊÇ·ñº¬ÓĞ¸ºÈ¨»ØÂ·  
+    bool flag = 1; //åˆ¤æ–­æ˜¯å¦å«æœ‰è´Ÿæƒå›è·¯  
     for(int i = 1; i <= edgenum; ++i)  
         if(dis[edge[i].v] > dis[edge[i].u] + edge[i].cost)  
         {  
@@ -36,9 +36,9 @@ bool Bellman_Ford()
     return flag;  
 }  
   
-void print_path(int root) //´òÓ¡×î¶ÌÂ·µÄÂ·¾¶£¨·´Ïò£©  
+void print_path(int root) //æ‰“å°æœ€çŸ­è·¯çš„è·¯å¾„ï¼ˆåå‘ï¼‰  
 {  
-    while(root != pre[root]) //Ç°Çı  
+    while(root != pre[root]) //å‰é©±  
     {  
         printf("%d-->", root);  
         root = pre[root];  
@@ -56,7 +56,7 @@ int main()
         scanf("%d%d%d", &edge[i].u, &edge[i].v, &edge[i].cost);  
     }  
     if(Bellman_Ford())  
-        for(int i = 1; i <= nodenum; ++i) //Ã¿¸öµã×î¶ÌÂ·  
+        for(int i = 1; i <= nodenum; ++i) //æ¯ä¸ªç‚¹æœ€çŸ­è·¯  
         {  
             printf("%d\n", dis[i]);  
             printf("Path:");  
@@ -68,7 +68,7 @@ int main()
     return 0;  
 }
 /*
-²âÊÔÊı¾İ£º
+æµ‹è¯•æ•°æ®ï¼š
 
 4 6 1
 1 2 20
@@ -78,7 +78,7 @@ int main()
 4 2 4
 3 4 2
 
-ºÍ£º
+å’Œï¼š
 
 4 6 1
 1 2 2
