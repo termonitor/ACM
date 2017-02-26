@@ -7,25 +7,26 @@ using namespace std;
 
 typedef struct node
 {
-    int matrix[N][M];      //ÁÚ½Ó¾ØÕó 
-    int n;                 //¶¥µãÊı 
-    int e;                 //±ßÊı 
+=======
+    int matrix[N][M];      //é‚»æ¥çŸ©é˜µ 
+    int n;                 //é¡¶ç‚¹æ•° 
+    int e;                 //è¾¹æ•° 
 }MGraph;
 
-void DijkstraPath(MGraph g,int *dist,int *path,int v0) //v0±íÊ¾Ô´¶¥µã 
+void DijkstraPath(MGraph g,int *dist,int *path,int v0) //v0è¡¨ç¤ºæºé¡¶ç‚¹ 
 {
     int i,j,k;
     bool *visited = (bool*)malloc(sizeof(bool)*g.n);
-    for(i=0;i<g.n;i++)//³õÊ¼»¯ 
+    for(i=0;i<g.n;i++)//åˆå§‹åŒ– 
     {
         if(g.matrix[v0][i]>0 && i!=v0)
         {
             dist[i] = g.matrix[v0][i];
-            path[i] = v0;//path¼ÇÂ¼×î¶ÌÂ·¾¶ÉÏ´Óv0µ½iµÄÇ°Ò»¸ö¶¥µã 
+            path[i] = v0;//pathè®°å½•æœ€çŸ­è·¯å¾„ä¸Šä»v0åˆ°içš„å‰ä¸€ä¸ªé¡¶ç‚¹ 
         }
         else
         {
-            dist[i] = INT_MAX; //ÈôiºÍv0²»ÏàÁÚ£¬ÔòÖÃÈ¨ÖµÎªÎŞÇî´ó 
+            dist[i] = INT_MAX; //è‹¥iå’Œv0ä¸ç›¸é‚»ï¼Œåˆ™ç½®æƒå€¼ä¸ºæ— ç©·å¤§ 
             path[i] = -1;
         }
         visited[i] = false;
@@ -38,7 +39,7 @@ void DijkstraPath(MGraph g,int *dist,int *path,int v0) //v0±íÊ¾Ô´¶¥µã
     {
         int min = INT_MAX;
         int u;
-        for(j=0;j<g.n;j++)  //Ñ°ÕÒÎ´±»À©Õ¹µÄÈ¨Öµ×îĞ¡µÄ¶¥µã 
+        for(j=0;j<g.n;j++)  //å¯»æ‰¾æœªè¢«æ‰©å±•çš„æƒå€¼æœ€å°çš„é¡¶ç‚¹ 
         {
             if(visited[j]==false && dist[j]<min)
             {
@@ -47,7 +48,7 @@ void DijkstraPath(MGraph g,int *dist,int *path,int v0) //v0±íÊ¾Ô´¶¥µã
             }
         }
         visited[u] = true;
-        for(k=0;k<g.n;k++)  //¸üĞÂdistÊı×éµÄÖµºÍÂ·¾¶µÄÖµ
+        for(k=0;k<g.n;k++)  //æ›´æ–°distæ•°ç»„çš„å€¼å’Œè·¯å¾„çš„å€¼
         {
             if(visited[k]==false && g.matrix[u][k]>0 && min+g.matrix[u][k] < dist[k])
             {
@@ -58,7 +59,7 @@ void DijkstraPath(MGraph g,int *dist,int *path,int v0) //v0±íÊ¾Ô´¶¥µã
     } 
 }
 
-void showPath(int *path,int v,int v0)  //´òÓ¡×î¶ÌÂ·¾¶ÉÏµÄ¸÷¸ö¶¥µã
+void showPath(int *path,int v,int v0)  //æ‰“å°æœ€çŸ­è·¯å¾„ä¸Šçš„å„ä¸ªé¡¶ç‚¹
 {
     stack<int> s;
     int u = v;
@@ -81,7 +82,7 @@ int main()
     while(cin>>n>>e && e!=0)
     {
         int i,j;
-        int s,t,w;   //±íÊ¾´æÔÚÒ»Ìõs->tµÄ±ß£¬È¨ÖµÎªw
+        int s,t,w;   //è¡¨ç¤ºå­˜åœ¨ä¸€æ¡s->tçš„è¾¹ï¼Œæƒå€¼ä¸ºw
         MGraph g;
         int v0;
         int *dist = (int*)malloc(sizeof(int)*n);
@@ -97,7 +98,7 @@ int main()
             g.matrix[s][t] = w;
         } 
         
-        cin>>v0;   //ÊäÈëÔ´¶¥µã
+        cin>>v0;   //è¾“å…¥æºé¡¶ç‚¹
         DijkstraPath(g,dist,path,v0);
         for(i=0;i<n;i++)
         {

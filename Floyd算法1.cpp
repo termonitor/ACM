@@ -2,24 +2,23 @@
 #include<stack>
 using namespace std;
 
-#define INFINITE 1000 //×î´óÖµ 
-#define MAX_VERTEX_COUNT 20 //×î´ó¶¥µã¸öÊı
+#define INFINITE 1000 //æœ€å¤§å€¼ 
+#define MAX_VERTEX_COUNT 20 //æœ€å¤§é¡¶ç‚¹ä¸ªæ•°
 
 struct Graph
 {
-    int g[MAX_VERTEX_COUNT][MAX_VERTEX_COUNT];//ÁÚ½Ó¾ØÕó
-    int count; //¶¥µãÊıÁ¿
-    int edgecount; //±ßÊı 
+    int g[MAX_VERTEX_COUNT][MAX_VERTEX_COUNT];//é‚»æ¥çŸ©é˜µ
+    int count; //é¡¶ç‚¹æ•°é‡
+    int edgecount; //è¾¹æ•° 
 };
-//¶ÁÈëÍ¼µÄÊı¾İ 
+//è¯»å…¥å›¾çš„æ•°æ® 
 void readGraphData(Graph *myGraph)
 {
-    cout<<"ÇëÊäÈë¶¥µãÊıÁ¿ºÍ±ßµÄÊıÁ¿: ";
+    cout<<"è¯·è¾“å…¥é¡¶ç‚¹æ•°é‡å’Œè¾¹çš„æ•°é‡: ";
     cin>>myGraph->count;
     cin>>myGraph->edgecount;
     
-    cout<< "ÇëÊäÈëÁÚ½Ó¾ØÕóÊı¾İ:" <<endl;
-    
+    cout<< "è¯·è¾“å…¥é‚»æ¥çŸ©é˜µæ•°æ®:" <<endl;    
     for(int row=0;row<myGraph->count;row++)
     {
         for(int col=0;col<myGraph->count;col++)
@@ -29,10 +28,10 @@ void readGraphData(Graph *myGraph)
     }
 }
 
-//ºËĞÄµÄFloydËã·¨
+//æ ¸å¿ƒçš„Floydç®—æ³•
 void floyd(int dis[][MAX_VERTEX_COUNT],int Path[][MAX_VERTEX_COUNT],int count)
 {
-    //ÏÈ³õÊ¼»¯PathÊı×é
+    //å…ˆåˆå§‹åŒ–Pathæ•°ç»„
     for(int i=0;i<count;i++)
         for(int j=0;j<count;j++)
             Path[i][j] = i;
@@ -48,7 +47,8 @@ void floyd(int dis[][MAX_VERTEX_COUNT],int Path[][MAX_VERTEX_COUNT],int count)
                 }
             }
 }
-//Êä³ö½á¹û
+
+//è¾“å‡ºç»“æœ
 void printResult(int dis[][MAX_VERTEX_COUNT],int Path[][MAX_VERTEX_COUNT],int count)
 {
     cout<<"Origin -> Dest   Distance    Path"<<endl;
@@ -59,15 +59,15 @@ void printResult(int dis[][MAX_VERTEX_COUNT],int Path[][MAX_VERTEX_COUNT],int co
             if(i!=j)
             {
                 cout<<i+1<< " -> "<<j+1<<"\t\t";
-                if(INFINITE == dis[i][j])  //i->j²»´æÔÚÂ·¾¶
+                if(INFINITE == dis[i][j])  //i->jä¸å­˜åœ¨è·¯å¾„
                 {
                     cout<<"INFINITE"<<endl; 
                 } 
                 else
                 {
                     cout<<dis[i][j]<<"\t\t";
-                    // ÓÉÓÚÎÒÃÇ²éÑ¯×î¶ÌÂ·¾¶ÊÇ´ÓºóÍùÇ°²å£¬Òò´ËÎÒÃÇ°Ñ²éÑ¯µÃµ½µÄ½Úµã
-                    // Ñ¹ÈëÕ»ÖĞ£¬×îºóµ¯³öÒÔË³ĞòÊä³ö½á¹û¡£
+                    // ç”±äºæˆ‘ä»¬æŸ¥è¯¢æœ€çŸ­è·¯å¾„æ˜¯ä»åå¾€å‰æ’ï¼Œå› æ­¤æˆ‘ä»¬æŠŠæŸ¥è¯¢å¾—åˆ°çš„èŠ‚ç‚¹
+                    // å‹å…¥æ ˆä¸­ï¼Œæœ€åå¼¹å‡ºä»¥é¡ºåºè¾“å‡ºç»“æœã€‚
                     stack<int> s;
                     int k=j;
                     

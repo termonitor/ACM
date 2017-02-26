@@ -19,8 +19,8 @@ int main()
         scanf("%lf%lf%lf%lf%lf",&h1,&r1,&x1,&y1,&z1);  
         scanf("%lf%lf%lf%lf%lf",&h2,&r2,&x2,&y2,&z2);  
         scanf("%lf%lf%lf",&x3,&y3,&z3);
-        z1 = z1+h1-r1;  // ·ËÍ·²¿zÖá×ø±ê 
-        z2 = z2+h2*0.9-r2;  //¾¯Í·²¿zÖá×ø±ê
+        z1 = z1+h1-r1;  // åŒªå¤´éƒ¨zè½´åæ ‡ 
+        z2 = z2+h2*0.9-r2;  //è­¦å¤´éƒ¨zè½´åæ ‡
         
         x = x1-x2;
         y = y1-y2;
